@@ -24,12 +24,21 @@ img {
   max-inline-size: 100%;
 }
 
-/* html {
+html {
     font-size: clamp(1rem, 0.75rem + 1.5vw, 2rem);
 }
-  */
+ 
 
 /* body {
     font-size: calc(16px + 1vw);
     height: 100vh;
 } */
+
+.header {
+  display: flex;
+  padding-left: 30px;
+}
+.header svg {
+  height: 1.5rem;
+}
+
