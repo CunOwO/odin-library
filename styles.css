@@ -37,8 +37,32 @@ html {
 .header {
   display: flex;
   padding-left: 30px;
-}
-.header svg {
-  height: 1.5rem;
+
+  & svg {
+    height: 1.5rem;
+  }
 }
 
+.main {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding: 40px 50px 0 50px;
+  gap: 30px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: rgb(235, 230, 230);
+  gap: 20px;
+  padding: 20px 30px 20px 30px;
+  border-radius: 20px;
+}
+
+.card img {
+  height: 260px;
+}
+
+.card .book-info {
+  font-size: 0.8rem;
+}
