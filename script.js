@@ -15,13 +15,13 @@ const warAndPeace = new Book("War and Peace", "Leo Tolstoy", 1225, true);
 
 const main = document.querySelector(".main");
 
-function addNewBook(book, imgUrl="./book-images/default.png") {
+function addNewBook(book, imgUrl="./book-covers/default.png") {
   const card = document.createElement("div");
   card.classList.toggle("card");
   const bookInfo = document.createElement("div");
   bookInfo.classList.toggle("book-info");
-  const bookImg = document.createElement("div");
-  bookImg.classList.toggle("img-container");
+  const bookCover = document.createElement("div");
+  bookCover.classList.toggle("img-container");
 
   for (const prop in book) {
     const p = document.createElement("p");
@@ -32,15 +32,15 @@ function addNewBook(book, imgUrl="./book-images/default.png") {
   const img = document.createElement("img");
   img.setAttribute("src", imgUrl);
 
-  bookImg.appendChild(img);
-  card.appendChild(bookImg);
+  bookCover.appendChild(img);
+  card.appendChild(bookCover);
   card.appendChild(bookInfo);
   main.appendChild(card);
 }
 
-addNewBook(hobbit, "./book-images/the-hobbit.jpg");
-addNewBook(mockingbird, "./book-images/to-kill-a-mocking-bird.jpg");
-addNewBook(warAndPeace, "./book-images/war-and-peace.jpg");
+addNewBook(hobbit, "./book-covers/the-hobbit.jpg");
+addNewBook(mockingbird, "./book-covers/to-kill-a-mocking-bird.jpg");
+addNewBook(warAndPeace, "./book-covers/war-and-peace.jpg");
 
 const dialog = document.querySelector("dialog");
 const addBtn = document.querySelector(".addBtn");
@@ -56,7 +56,7 @@ confirmBtn.addEventListener("click", (e) => {
     form.reportValidity(); 
     return; 
   }
-  
+
   e.preventDefault();
   const data = Object.fromEntries(new FormData(form).entries());
   const isTrue = (data.read === "true");
