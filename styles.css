@@ -77,10 +77,24 @@ html {
     justify-content: center;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1.1rem;
+    
 
     & svg {
-      height: 60px;
+      height: 70px;
     }
   }
+}
 
+.book-info {
+
+  & :not(p:first-child) {
+    font-size: 0.7rem;
+    color: rgb(0 0 0 / 60%);
+  }
+
+  & p:first-child {
+    font-weight: bold;
+    font-size: 0.9rem;
+  }
 }
