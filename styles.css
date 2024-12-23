@@ -37,6 +37,7 @@ html {
 .header {
   display: flex;
   padding-left: 30px;
+  font-weight: bold;
 
   & svg {
     height: 1.5rem;
@@ -57,12 +58,29 @@ html {
   gap: 20px;
   padding: 20px 30px 20px 30px;
   border-radius: 20px;
-}
 
-.card img {
-  height: 260px;
-}
+  & img {
+    height: 260px;
+  }
 
-.card .book-info {
-  font-size: 0.8rem;
+  & .book-info {
+    font-size: 0.8rem;
+  }
+
+  & button {
+    grid-column: 1 / -1;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: bold;
+
+    & svg {
+      height: 60px;
+    }
+  }
+
 }
