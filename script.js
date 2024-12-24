@@ -31,6 +31,9 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
 
   const img = document.createElement("img");
   img.setAttribute("src", imgUrl);
+  
+  let cardIndex = myLibrary.indexOf(book);
+  card.setAttribute("data-index-number", cardIndex);
 
   bookCover.appendChild(img);
   card.appendChild(bookCover);
