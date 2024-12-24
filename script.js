@@ -24,11 +24,15 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   const bookCover = document.createElement("div");
   bookCover.classList.toggle("img-container");
 
-  for (const prop in book) {
-    const p = document.createElement("p");
-    p.textContent = book[prop];
-    bookInfo.appendChild(p);
-  }
+  const p1 = document.createElement("p");
+  p1.textContent = book.title;
+  const p2 = document.createElement("p");
+  p2.textContent = book.author;
+  const p3 = document.createElement("p");
+  p3.textContent = `${book.pages} pages`
+  bookInfo.appendChild(p1);
+  bookInfo.appendChild(p2);
+  bookInfo.appendChild(p3);
 
   const btnContainer = document.createElement("div");
   btnContainer.classList.toggle("btn-container");

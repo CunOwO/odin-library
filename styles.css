@@ -90,14 +90,17 @@ html {
   display: flex;
   flex-direction: column;
 
-  & :not(p:first-child) {
-    font-size: 0.7rem;
-    color: rgb(0 0 0 / 60%);
-  }
-
   & p:first-child {
     font-weight: bold;
     font-size: 0.9rem;
+  }
+
+  & :not(p:first-child) {
+    font-size: 0.7rem;
+  }
+
+  & p:first-child + p {
+    color: rgb(0 0 0 / 60%);
   }
 
   & .btn-container {
