@@ -18,6 +18,7 @@ const main = document.querySelector(".main");
 function addNewBook(book, imgUrl="./book-covers/default.png") {
   const card = document.createElement("div");
   card.classList.toggle("card");
+  card.classList.toggle("book");
   const bookInfo = document.createElement("div");
   bookInfo.classList.toggle("book-info");
   const bookCover = document.createElement("div");
@@ -28,29 +29,37 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
     p.textContent = book[prop];
     bookInfo.appendChild(p);
   }
-  
+
+  const btnContainer = document.createElement("div");
+  btnContainer.classList.toggle("btn-container");
+
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.toggle("deleteBtn");
   const deleleIcon = document.createElement("img");
   deleleIcon.setAttribute("src", "./book-icons/delete.svg");
   deleteBtn.appendChild(deleleIcon);
-  bookInfo.appendChild(deleteBtn);
+  btnContainer.appendChild(deleteBtn);
+  bookInfo.appendChild(btnContainer);
 
   const img = document.createElement("img");
   img.setAttribute("src", imgUrl);
-  
-  let cardIndex = myLibrary.indexOf(book);
-  card.setAttribute("data-index-number", cardIndex);
 
   bookCover.appendChild(img);
   card.appendChild(bookCover);
   card.appendChild(bookInfo);
   main.appendChild(card);
+
+  deleteBtn.addEventListener("click", () => {
+    myLibrary.splice(card.dataset.indexNumber, 1);
+    card.remove();
+    updateCardIndex();
+  });
 }
 
 addNewBook(hobbit, "./book-covers/the-hobbit.jpg");
 addNewBook(mockingbird, "./book-covers/to-kill-a-mocking-bird.jpg");
 addNewBook(warAndPeace, "./book-covers/war-and-peace.jpg");
+updateCardIndex();
 
 const dialog = document.querySelector("dialog");
 const addBtn = document.querySelector(".addBtn");
@@ -79,6 +88,14 @@ confirmBtn.addEventListener("click", (e) => {
   const newBook = new Book(data.title, data.author, data.pages, isTrue);
   
   addNewBook(newBook);
+  updateCardIndex();
   dialog.close();
   form.reset();
 });
+
+function updateCardIndex() {
+  let cards = document.querySelectorAll(".card.book");
+  for (let i = 0, length = myLibrary.length; i < length; i++) {
+    cards[i].setAttribute("data-index-number", i);
+  }
+}
