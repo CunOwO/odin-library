@@ -56,7 +56,7 @@ html {
   grid-template-columns: 1fr 1fr;
   background-color: rgb(235, 230, 230);
   gap: 20px;
-  padding: 20px 30px 20px 30px;
+  padding: 20px 20px 20px 20px;
   border-radius: 20px;
 
   & img {
@@ -79,7 +79,6 @@ html {
     font-weight: bold;
     font-size: 1.1rem;
     
-
     & svg {
       height: 70px;
     }
@@ -87,6 +86,8 @@ html {
 }
 
 .book-info {
+  display: flex;
+  flex-direction: column;
 
   & :not(p:first-child) {
     font-size: 0.7rem;
@@ -96,5 +97,16 @@ html {
   & p:first-child {
     font-weight: bold;
     font-size: 0.9rem;
+  }
+
+  button {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+
+    & img {
+      height: 35px;
+    }
   }
 }

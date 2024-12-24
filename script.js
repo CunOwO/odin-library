@@ -28,6 +28,13 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
     p.textContent = book[prop];
     bookInfo.appendChild(p);
   }
+  
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.toggle("deleteBtn");
+  const deleleIcon = document.createElement("img");
+  deleleIcon.setAttribute("src", "./book-icons/delete.svg");
+  deleteBtn.appendChild(deleleIcon);
+  bookInfo.appendChild(deleteBtn);
 
   const img = document.createElement("img");
   img.setAttribute("src", imgUrl);
