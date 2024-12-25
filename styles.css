@@ -38,9 +38,12 @@ html {
   display: flex;
   padding-left: 30px;
   font-weight: bold;
-
+  align-items: center;
+  font-size: 1.6rem;
+  gap: 8px;
+  
   & svg {
-    height: 1.5rem;
+    height: 1.9rem;
   }
 }
 
