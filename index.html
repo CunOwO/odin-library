@@ -42,9 +42,12 @@
           <input type="number" id="pages" name="pages" />
         </div>
         <div class="input-container">
-          <label for="read">Have you read this book?</label>
-          <input type="hidden" name="read" value="false" />
-          <input type="checkbox" id="read" name="read" value="true" />
+          <span>Read</span>
+          <label class="switch">
+            <input type="hidden" value="false" />
+            <input type="checkbox" value="true" />
+            <span class="slider"></span>
+          </label>
         </div>
         <button class="confirmBtn">Confirm</button>
       </form>
