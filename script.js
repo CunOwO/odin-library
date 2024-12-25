@@ -126,3 +126,9 @@ function updateCardIndex() {
     cards[i].setAttribute("data-index-number", i);
   }
 }
+
+form.addEventListener("click", (e) => e.stopPropagation());
+dialog.addEventListener("click", () => {
+  dialog.close();
+  form.reset();
+});
