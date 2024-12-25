@@ -29,7 +29,7 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   const p2 = document.createElement("p");
   p2.textContent = book.author;
   const p3 = document.createElement("p");
-  p3.textContent = `${book.pages} pages`
+  p3.textContent = `Pages: ${book.pages}`;
   bookInfo.appendChild(p1);
   bookInfo.appendChild(p2);
   bookInfo.appendChild(p3);
@@ -37,12 +37,27 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   const btnContainer = document.createElement("div");
   btnContainer.classList.toggle("btn-container");
 
+  const p4 = document.createElement("p");
+  p4.textContent = "Read";
+  btnContainer.appendChild(p4);
+  
+  const readBtnLabel = document.createElement("label");
+  readBtnLabel.classList.toggle("switch");
+  const readBtn = document.createElement("input");
+  readBtn.setAttribute("type", "checkbox");
+  const readBtnSlider = document.createElement("span");
+  readBtnSlider.classList.toggle("slider");
+  readBtnLabel.appendChild(readBtn);
+  readBtnLabel.appendChild(readBtnSlider);
+  btnContainer.appendChild(readBtnLabel);
+
   const deleteBtn = document.createElement("button");
   deleteBtn.classList.toggle("deleteBtn");
   const deleleIcon = document.createElement("img");
   deleleIcon.setAttribute("src", "./book-icons/delete.svg");
   deleteBtn.appendChild(deleleIcon);
   btnContainer.appendChild(deleteBtn);
+
   bookInfo.appendChild(btnContainer);
 
   const img = document.createElement("img");
