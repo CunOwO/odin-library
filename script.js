@@ -53,7 +53,7 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   btnContainer.appendChild(readBtnLabel);
 
   const deleteBtn = document.createElement("button");
-  deleteBtn.classList.toggle("deleteBtn");
+  deleteBtn.classList.toggle("delete-btn");
   const deleleIcon = document.createElement("img");
   deleleIcon.setAttribute("src", "./book-icons/delete.svg");
   deleteBtn.appendChild(deleleIcon);
@@ -82,9 +82,9 @@ addNewBook(warAndPeace, "./book-covers/war-and-peace.jpg");
 updateCardIndex();
 
 const dialog = document.querySelector("dialog");
-const addBtn = document.querySelector(".addBtn");
-const form = document.querySelector('form');
-const confirmBtn = document.querySelector(".confirmBtn");
+const addBtn = document.querySelector(".add-btn");
+const form = document.querySelector("form");
+const confirmBtn = document.querySelector(".confirm-btn");
 
 addBtn.addEventListener("click", () => {
   dialog.showModal();
