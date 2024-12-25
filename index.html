@@ -19,7 +19,7 @@
     </div>
     <div class="main">
       <div class="card button">
-        <button class="addBtn">
+        <button class="add-btn">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
             <path d="M20 14H14V20H10V14H4V10H10V4H14V10H20V14Z" />
           </svg>
@@ -29,19 +29,19 @@
     </div>
     <dialog>
       <form method="dialog">
-        <div class="input-container">
+        <div class="input-row">
           <label for="title">Title</label>
           <input type="text" id="title" name="title" autofocus required />
         </div>
-        <div class="input-container">
+        <div class="input-row">
           <label for="author">Author</label>
           <input type="text" id="author" name="author" required />
         </div>
-        <div class="input-container">
+        <div class="input-row">
           <label for="pages">Pages</label>
           <input type="number" id="pages" name="pages" />
         </div>
-        <div class="input-container">
+        <div class="input-row">
           <span>Read</span>
           <label class="switch">
             <input type="hidden" name="read" value="false" />
@@ -49,7 +49,10 @@
             <span class="slider"></span>
           </label>
         </div>
-        <button class="confirmBtn">Confirm</button>
+        <div class="input-row">
+          <button class="confirm-btn">Confirm</button>
+          <button class="cancel-btn" formnovalidate>Cancel</button>
+        </div>
       </form>
     </dialog>
   </body>
