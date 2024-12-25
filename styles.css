@@ -117,7 +117,7 @@ html {
       transform: translateY(-3px);
     }
 
-    & .deleteBtn {
+    & .delete-btn {
       display: initial;
       grid-column: 3 / 4;
       justify-self: end;
@@ -153,6 +153,7 @@ html {
   background-color: #ccc;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  border-radius: 28px;
 }
 
 .slider::before {
@@ -165,6 +166,7 @@ html {
   background-color: white;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  border-radius: 50%;
 }
 
 input:checked + .slider {
@@ -179,4 +181,53 @@ input:checked + .slider::before {
   -webkit-transform: translateX(22px);
   -ms-transform: translateX(22px);
   transform: translateX(22px);
+}
+
+dialog {
+  border: none;
+  border-radius: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  
+  & .input-row {
+    display: flex;
+    align-items: center;
+    font-size: 0.8rem;
+
+    & input {
+      border: 1px solid rgb(214, 211, 211);
+      border-radius: 6px;
+      padding: 8px 12px 8px 12px;
+    }
+  }
+  
+  & .input-row:nth-child(-n + 3) {
+    justify-content: space-between;
+    gap: 15px;
+  }
+  
+  & .input-row:nth-child(4) {
+    gap: 35px;
+  }
+
+  & .input-row:nth-child(5) {
+    justify-content: center;
+    gap: 50px;
+
+    & button {
+      border: none;
+      padding: 10px 30px 10px 30px;
+      cursor: pointer;
+      border-radius: 30px;
+    }
+
+    & button:hover {
+      color: white;
+      background-color: black;
+    }
+  }
 }
