@@ -40,11 +40,12 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   const p4 = document.createElement("p");
   p4.textContent = "Read";
   btnContainer.appendChild(p4);
-  
+
   const readBtnLabel = document.createElement("label");
   readBtnLabel.classList.toggle("switch");
   const readBtn = document.createElement("input");
   readBtn.setAttribute("type", "checkbox");
+  readBtn.checked = book.read;
   const readBtnSlider = document.createElement("span");
   readBtnSlider.classList.toggle("slider");
   readBtnLabel.appendChild(readBtn);
