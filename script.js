@@ -85,6 +85,7 @@ const dialog = document.querySelector("dialog");
 const addBtn = document.querySelector(".add-btn");
 const form = document.querySelector("form");
 const confirmBtn = document.querySelector(".confirm-btn");
+const cancelBtn = document.querySelector(".cancel-btn");
 
 addBtn.addEventListener("click", () => {
   dialog.showModal();
@@ -109,6 +110,12 @@ confirmBtn.addEventListener("click", (e) => {
   
   addNewBook(newBook);
   updateCardIndex();
+  dialog.close();
+  form.reset();
+});
+
+cancelBtn.addEventListener("click", (e) => {
+  e.preventDefault();
   dialog.close();
   form.reset();
 });
