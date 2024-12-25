@@ -191,6 +191,10 @@ dialog {
   border-radius: 20px;
 }
 
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 60%);
+}
+
 form {
   display: flex;
   flex-direction: column;
