@@ -1,12 +1,23 @@
-const myLibrary = [];
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    Library.addBook(this);
+  }
+}
 
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
+class Library {
+  static myLibrary = [];
 
-  myLibrary.push(this);
+  static addBook(book) {
+    this.myLibrary.push(book);
+  }
+
+  static removeBook(index) {
+    this.myLibrary.splice(index, 1);
+  }
 }
 
 const hobbit = new Book("The Hobbit", "J.R.R. Tolkien", 310, true);
@@ -70,9 +81,13 @@ function addNewBook(book, imgUrl="./book-covers/default.png") {
   main.appendChild(card);
 
   deleteBtn.addEventListener("click", () => {
-    myLibrary.splice(card.dataset.indexNumber, 1);
+    Library.removeBook(card.dataset.indexNumber);
     card.remove();
     updateCardIndex();
+  });
+
+  readBtn.addEventListener("click", () => {
+    book.read = !book.read;
   });
 }
 
@@ -122,7 +137,7 @@ cancelBtn.addEventListener("click", (e) => {
 
 function updateCardIndex() {
   let cards = document.querySelectorAll(".card.book");
-  for (let i = 0, length = myLibrary.length; i < length; i++) {
+  for (let i = 0, length = Library.myLibrary.length; i < length; i++) {
     cards[i].setAttribute("data-index-number", i);
   }
 }
