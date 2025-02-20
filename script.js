@@ -116,7 +116,7 @@ confirmBtn.addEventListener("click", (e) => {
   const data = Object.fromEntries(new FormData(form).entries());
   const isTrue = (data.read === "true");
   if (data.pages === "") {
-    data.pages = "Unknow";
+    data.pages = "Unknown";
   }
   else {
     data.pages = parseInt(data.pages);
